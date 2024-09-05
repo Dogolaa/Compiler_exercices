@@ -441,10 +441,7 @@ int yy_flex_debug = 0;
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
 #line 1 "identif.l"
-#line 2 "identif.l"
-#include <stdio.h>
-#line 447 "<stdout>"
-#line 448 "<stdout>"
+#line 445 "<stdout>"
 
 #define INITIAL 0
 
@@ -661,10 +658,10 @@ YY_DECL
 		}
 
 	{
-#line 8 "identif.l"
+#line 4 "identif.l"
 
 
-#line 668 "<stdout>"
+#line 665 "<stdout>"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -723,26 +720,26 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 10 "identif.l"
+#line 6 "identif.l"
 { printf("%s\n", yytext); }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 11 "identif.l"
+#line 7 "identif.l"
 
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 12 "identif.l"
+#line 8 "identif.l"
 
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 14 "identif.l"
+#line 10 "identif.l"
 ECHO;
 	YY_BREAK
-#line 746 "<stdout>"
+#line 743 "<stdout>"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1747,7 +1744,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 14 "identif.l"
+#line 10 "identif.l"
 
 
 int yywrap () { 
