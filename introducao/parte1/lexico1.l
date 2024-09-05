@@ -1,4 +1,4 @@
-identificador [a-zA-Z] ([A-Za-z0-9])*
+identificador [a-zA-Z]([A-Za-z0-9])*
 numero [0-9]+
 espaco [ \t]+
 novalinha [\n]
@@ -20,7 +20,7 @@ fimenquanto     printf("%11s: reservado\n", yytext);
 "+"             printf("%11s: op. soma\n", yytext);
 "-"             printf("%11s: op. subtracao\n", yytext);
 "*"             printf("%11s: op. multiplicacao\n", yytext);
-div             printf("%11s: op. divsiao\n", yytext);
+div             printf("%11s: op. divisao\n", yytext);
 ">"             printf("%11s: op. maior\n", yytext);
 "<"             printf("%11s: op. menor\n", yytext);
 "="             printf("%11s: op. igual\n", yytext);
@@ -41,13 +41,13 @@ F               printf("%11s: cte: falso\n", yytext);
 {identificador} printf("%11s: identificador\n", yytext);
 {numero}        printf("%11s: numero\n", yytext);
 {espaco}
-{novalinha}]
+{novalinha}
 .               printf("%11s: SIMBOLO NAO RECONHECIDO\n", yytext);
 %%
 
 int yywrap () { 
     return 1;
-    }
+}
 
 int main (void){
     yylex();
