@@ -1,0 +1,113 @@
+Gramática
+
+    0 $accept: S $end
+
+    1 S: '[' L ']'
+    2  | 'a'
+
+    3 L: S
+    4  | L ',' S
+
+
+Terminais, com as regras onde eles aparecem
+
+    $end (0) 0
+    ',' (44) 4
+    '[' (91) 1
+    ']' (93) 1
+    'a' (97) 2
+    error (256)
+
+
+Não terminais com as regras onde eles aparecem
+
+    $accept (7)
+        à esquerda: 0
+    S (8)
+        à esquerda: 1 2
+        à direita: 0 3 4
+    L (9)
+        à esquerda: 3 4
+        à direita: 1 4
+
+
+Estado 0
+
+    0 $accept: • S $end
+
+    '['  deslocar, e ir ao estado 1
+    'a'  deslocar, e ir ao estado 2
+
+    S  ir ao estado 3
+
+
+Estado 1
+
+    1 S: '[' • L ']'
+
+    '['  deslocar, e ir ao estado 1
+    'a'  deslocar, e ir ao estado 2
+
+    S  ir ao estado 4
+    L  ir ao estado 5
+
+
+Estado 2
+
+    2 S: 'a' •
+
+    $padrão  reduzir usando a regra 2 (S)
+
+
+Estado 3
+
+    0 $accept: S • $end
+
+    $end  deslocar, e ir ao estado 6
+
+
+Estado 4
+
+    3 L: S •
+
+    $padrão  reduzir usando a regra 3 (L)
+
+
+Estado 5
+
+    1 S: '[' L • ']'
+    4 L: L • ',' S
+
+    ']'  deslocar, e ir ao estado 7
+    ','  deslocar, e ir ao estado 8
+
+
+Estado 6
+
+    0 $accept: S $end •
+
+    $padrão  aceitar
+
+
+Estado 7
+
+    1 S: '[' L ']' •
+
+    $padrão  reduzir usando a regra 1 (S)
+
+
+Estado 8
+
+    4 L: L ',' • S
+
+    '['  deslocar, e ir ao estado 1
+    'a'  deslocar, e ir ao estado 2
+
+    S  ir ao estado 9
+
+
+Estado 9
+
+    4 L: L ',' S •
+
+    $padrão  reduzir usando a regra 4 (L)

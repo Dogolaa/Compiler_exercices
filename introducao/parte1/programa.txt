@@ -4,5 +4,6 @@ inicio
     A <- 5
     leia B 
     B <- A * B
-    escreva B 
+    escreva B
+    2
 fimprograma
