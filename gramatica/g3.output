@@ -1,0 +1,65 @@
+Gramática
+
+    0 $accept: S $end
+
+    1 S: INTEIRO S
+    2  | ε
+
+
+Terminais, com as regras onde eles aparecem
+
+    $end (0) 0
+    error (256)
+    INTEIRO (258) 1
+
+
+Não terminais com as regras onde eles aparecem
+
+    $accept (4)
+        à esquerda: 0
+    S (5)
+        à esquerda: 1 2
+        à direita: 0 1
+
+
+Estado 0
+
+    0 $accept: • S $end
+
+    INTEIRO  deslocar, e ir ao estado 1
+
+    $padrão  reduzir usando a regra 2 (S)
+
+    S  ir ao estado 2
+
+
+Estado 1
+
+    1 S: INTEIRO • S
+
+    INTEIRO  deslocar, e ir ao estado 1
+
+    $padrão  reduzir usando a regra 2 (S)
+
+    S  ir ao estado 3
+
+
+Estado 2
+
+    0 $accept: S • $end
+
+    $end  deslocar, e ir ao estado 4
+
+
+Estado 3
+
+    1 S: INTEIRO S •
+
+    $padrão  reduzir usando a regra 1 (S)
+
+
+Estado 4
+
+    0 $accept: S $end •
+
+    $padrão  aceitar
